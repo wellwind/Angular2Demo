@@ -8,6 +8,7 @@
       <label [ngClass]="{del: item.done === true, first: first, last: last, even: even, odd: odd}">
         <input type="checkbox" checked="{{item.done === true ? 'checked' : ''}}" (click)="todoService.changeStatus(item)" id="item_{{item.id}}" />
           {{item.text}}, index: {{index}}
+          <span *ngIf="item.done">(Done)</span>
       </label>
     </li>
   </ul>
