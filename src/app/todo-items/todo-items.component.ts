@@ -15,4 +15,7 @@ export class TodoItemsComponent implements OnInit {
   ngOnInit() {
   }
 
+  changeStatus(todoItem){
+    todoItem.done = !todoItem.done;
+  }
 }
