@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'add-todo',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
+  @Input()
+  todoText = "test";
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  addItemClick($event : MouseEvent){
+    console.log(this.todoText);
+  }
 }
