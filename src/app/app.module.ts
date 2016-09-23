@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
+import { TodoItemsComponent } from './todo-items/todo-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    TodoItemsComponent
   ],
   imports: [
     BrowserModule,
