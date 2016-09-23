@@ -1,3 +1,19 @@
 .del {
   text-decoration: line-through;
 }
+
+.even {
+  color: darkcyan;
+}
+
+.odd {
+  color: indianred;
+}
+
+.first{
+  font-size: 1.5em;
+}
+
+.last {
+  text-decoration: underline;
+}

@@ -1,7 +1,14 @@
+<!--
+  More about ngFor
+  https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html
+-->
 <div>
   <ul>
-    <li *ngFor="let item of items">
-      <label [ngClass]="{del: item.done === true}"><input type="checkbox" checked="{{item.done === true ? 'checked' : ''}}" (click)="todoService.changeStatus(item)" id="item_{{item.id}}" />{{item.text}}</label>
+    <li *ngFor="let item of items; let index = index; let first = first; let last = last, let even = even; let odd = odd">
+      <label [ngClass]="{del: item.done === true, first: first, last: last, even: even, odd: odd}">
+        <input type="checkbox" checked="{{item.done === true ? 'checked' : ''}}" (click)="todoService.changeStatus(item)" id="item_{{item.id}}" />
+          {{item.text}}, index: {{index}}
+      </label>
     </li>
   </ul>
 </div>
