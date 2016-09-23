@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TodoItem } from '../app.component';
 
 @Component({
   selector: 'app-todo-items',
@@ -15,7 +16,7 @@ export class TodoItemsComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeStatus(todoItem){
+  changeStatus(todoItem: TodoItem){
     todoItem.done = !todoItem.done;
   }
 }
