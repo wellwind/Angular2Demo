@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from './todo.service';
 
 export class TodoItem {
   id: number;
@@ -9,18 +10,14 @@ export class TodoItem {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [TodoService]
 })
 
 export class AppComponent {
   title = 'app works!';
-  items : Array<TodoItem> = [
-    {id: 1, text: "todo 1", done: true},
-    {id: 2, text: "todo 2", done: false},
-    {id: 3, text: "todo 3", done: true}
-  ];
 
-  addTodoItem(todoText) {
-    this.items.push({ id: this.items.length + 1, text: todoText, done: false})
+  constructor(private todoService: TodoService){
   }
+
 }

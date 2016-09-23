@@ -2,6 +2,6 @@
   {{title}}
 </h1>
 
-<add-todo (addTodoItem)="addTodoItem($event)"></add-todo>
+<add-todo (addTodoItem)="todoService.addTodoItem($event)"></add-todo>
 
-<app-todo-items [items]="items"></app-todo-items>
+<app-todo-items [items]="todoService.items"></app-todo-items>
