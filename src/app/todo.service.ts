@@ -15,4 +15,8 @@ export class TodoService {
   addTodoItem(todoText) {
     this.items.push({ id: this.items.length + 1, text: todoText, done: false})
   }
+
+  changeStatus(todoItem: TodoItem){
+    todoItem.done = !todoItem.done;
+  }
 }

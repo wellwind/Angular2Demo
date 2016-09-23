@@ -1,7 +1,7 @@
 <div>
   <ul>
     <li *ngFor="let item of items">
-      <label [ngClass]="{del: item.done === true}"><input type="checkbox" checked="{{item.done === true ? 'checked' : ''}}" (click)="changeStatus(item)" id="item_{{item.id}}" />{{item.text}}</label>
+      <label [ngClass]="{del: item.done === true}"><input type="checkbox" checked="{{item.done === true ? 'checked' : ''}}" (click)="todoService.changeStatus(item)" id="item_{{item.id}}" />{{item.text}}</label>
     </li>
   </ul>
 </div>
