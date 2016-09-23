@@ -14,7 +14,7 @@ export class AppComponent {
     {id: 3, text: "todo 3"}
   ];
 
-  addTodoItem($event) {
-    console.log("will add todo item", $event);
+  addTodoItem(todoText) {
+    this.items.push({ id: this.items.length + 1, text: todoText})
   }
 }
