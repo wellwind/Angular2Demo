@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoService } from './todo.service';
 
-export class TodoItem {
-  id: number;
-  text: string;
-  done: boolean
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

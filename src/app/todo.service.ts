@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TodoItem } from './app.component';
+import { TodoItem } from './todo-item';
 
 @Injectable()
 export class TodoService {
