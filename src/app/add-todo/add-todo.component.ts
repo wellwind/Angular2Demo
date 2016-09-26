@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'add-todo',
+  selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
   @Input()
-  todoText = "test";
+  todoText = 'test';
 
   @Output()
   addTodoItem = new EventEmitter();
@@ -17,7 +17,7 @@ export class AddTodoComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItemClick($event : MouseEvent){
+  addItemClick($event: MouseEvent) {
     console.log(this.todoText);
     this.addTodoItem.emit(this.todoText);
   }
