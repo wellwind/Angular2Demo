@@ -1,3 +1,4 @@
-<div>
-  <input type="text" name="todo_item" [(ngModel)]="todoText"/> <button type="button" (click)="addItemClick($event)">Add</button>
+<div class="form-inline">
+  <input type="text" name="todo_item" [(ngModel)]="todoText" class="form-control" /> 
+  <button type="button" class="btn btn-primary" (click)="addItemClick($event)">Add</button>
 </div>
