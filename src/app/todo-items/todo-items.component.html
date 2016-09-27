@@ -10,6 +10,7 @@
           {{item.text}}, index: {{index}}
       </label>
       <span *ngIf="item.done" class="label label-success">(Done)</span>
+      <span class="label label-info" (click)="viewDetail(item)">Detail</span>
     </li>
   </ul>
 </div>

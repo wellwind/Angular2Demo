@@ -19,4 +19,14 @@ export class TodoService {
   changeStatus(todoItem: TodoItem) {
     todoItem.done = !todoItem.done;
   }
+
+  getItem(id: number) {
+    let item: TodoItem;
+    this.items.forEach(element => {
+      if (element.id === id) {
+        item = element;
+      }
+    });
+    return item;
+  }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { TodoService } from '../todo.service';
+import { TodoItem } from './../todo-item';
 
 @Component({
   selector: 'app-todo-items',
@@ -10,10 +12,14 @@ import { TodoService } from '../todo.service';
 export class TodoItemsComponent implements OnInit {
 
   @Input()
-  items;
+  items: Array<TodoItem>;
 
-  constructor(private todoService: TodoService) { }
+  constructor(private router: Router, private todoService: TodoService) { }
 
   ngOnInit() {
+  }
+
+  viewDetail(item: TodoItem) {
+    this.router.navigate(['/item', item.id]);
   }
 }
