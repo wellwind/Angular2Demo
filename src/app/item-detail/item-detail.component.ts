@@ -4,7 +4,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { TodoService } from '../todo.service';
 
 @Component({
-  selector: 'app-item-detail',
   templateUrl: './item-detail.component.html',
   styleUrls: ['./item-detail.component.css']
 })
@@ -16,8 +15,10 @@ export class ItemDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id = +this.route.snapshot.params['id']; // convert to integer
-    this.todoItem = this.todoService.getItem(id);
+    this.route.params.forEach((params: Params) => {
+      let id = +params['id']; // convert to integer
+      this.todoItem = this.todoService.getItem(id);
+    });
   }
 
 }
