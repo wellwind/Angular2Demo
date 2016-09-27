@@ -11,7 +11,7 @@ import { TodoService } from './todo.service';
 export class AppComponent {
   title = 'app works!';
 
-  constructor(private todoService: TodoService){
+  constructor(private todoService: TodoService) {
   }
 
 }
