@@ -2,6 +2,8 @@
   {{title}}
 </h1>
 
-<app-add-todo (addTodoItem)="todoService.addTodoItem($event)"></app-add-todo>
+<ul class="nav nav-tabs">
+  <li><a routerLink="/">Home</a></li>
+</ul>
 
-<app-todo-items [items]="todoService.items"></app-todo-items>
+<router-outlet></router-outlet>
