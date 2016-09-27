@@ -9,12 +9,13 @@ import { TodoItemsComponent } from './todo-items/todo-items.component';
 
 import { Routing, AppRoutingProviders } from './app.routing';
 import { IndexComponent } from './index/index.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTodoComponent,
-    TodoItemsComponent, IndexComponent
+    TodoItemsComponent, IndexComponent, SettingsComponent
   ],
   imports: [
     BrowserModule,
