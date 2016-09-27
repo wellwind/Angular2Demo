@@ -8,6 +8,9 @@ import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
 
 import { Routing, AppRoutingProviders } from './app.routing';
+
+import { TodoService } from './todo.service';
+
 import { IndexComponent } from './index/index.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
@@ -24,7 +27,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     HttpModule,
     Routing
   ],
-  providers: [AppRoutingProviders],
+  providers: [AppRoutingProviders, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
