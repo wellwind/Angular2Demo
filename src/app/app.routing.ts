@@ -14,4 +14,4 @@ export const AppRoutingProviders: any[] = [
 
 ];
 
-export const Routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const Routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, {useHash: true});
