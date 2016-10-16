@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
 
-import { Routing, AppRoutingProviders } from './app.routing';
+import { AppRoutingModule } from './app.routing.module';
 
 import { TodoService } from './todo.service';
 
@@ -26,9 +26,9 @@ import { BsButtonDirective } from './bs-button.directive';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Routing
+    AppRoutingModule
   ],
-  providers: [AppRoutingProviders, TodoService],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
