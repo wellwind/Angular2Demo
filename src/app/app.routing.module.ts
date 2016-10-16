@@ -22,9 +22,9 @@ import { SettingsComponent } from './settings/settings.component';
             }]
         }, {
             path: 'settings',
-            component: SettingsComponent
+            loadChildren: 'app/settings/settings.module#SettingsModule'
         }], {
-            useHash: true 
+            useHash: true
         })
     ],
     exports: [
