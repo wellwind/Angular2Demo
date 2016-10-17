@@ -14,12 +14,13 @@ import { TodoService } from './todo.service';
 import { IndexComponent } from './index/index.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { BsButtonDirective } from './bs-button.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTodoComponent,
-    TodoItemsComponent, IndexComponent, SettingsComponent, ItemDetailComponent
+    TodoItemsComponent, IndexComponent, SettingsComponent, ItemDetailComponent, BsButtonDirective, BsButtonDirective
   ],
   imports: [
     BrowserModule,
