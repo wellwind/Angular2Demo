@@ -19,7 +19,7 @@ import { BsButtonDirective } from './bs-button.directive';
   declarations: [
     AppComponent,
     AddTodoComponent,
-    TodoItemsComponent, IndexComponent, SettingsComponent, ItemDetailComponent, BsButtonDirective, BsButtonDirective
+    TodoItemsComponent, IndexComponent, ItemDetailComponent, BsButtonDirective
   ],
   imports: [
     BrowserModule,
