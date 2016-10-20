@@ -8,7 +8,9 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "postinstall": "mkdir apps & cd apps & cordova create cordova wellwind.github.com Angular2AppDemo & cd cordova & cordova platform add ios & cordova platform add android & cordova platform add windows & cordova platform add browser",
+    "start_browser": "ng build & cp dist/* apps/cordova/www -r & cd apps/cordova & cordova run browser"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +31,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
+    "@types/node": "^6.0.45",
     "angular-cli": "1.0.0-beta.15",
     "codelyzer": "~0.0.26",
     "jasmine-core": "2.4.1",
