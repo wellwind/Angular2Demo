@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -13,7 +13,10 @@ describe('BannerInlineComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [BannerInlineComponent]
+      declarations: [BannerInlineComponent],
+      providers: [
+        { provide: ComponentFixtureAutoDetect, useValue: true }
+      ]
     })
       .compileComponents();
   }));
@@ -21,7 +24,6 @@ describe('BannerInlineComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BannerInlineComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
     // query for the title <h1> by CSS element selector
     de = fixture.debugElement.query(By.css('h1'));
     el = de.nativeElement;
@@ -32,7 +34,6 @@ describe('BannerInlineComponent', () => {
   });
 
   it('should display original title', () => {
-    fixture.detectChanges();
     expect(el.textContent).toContain(component.title);
   });
 
@@ -42,7 +43,16 @@ describe('BannerInlineComponent', () => {
     expect(el.textContent).toContain('Test Title');
   });
 
-  it('no title in the DOM until manually call `detectChanges`', () => {
-    expect(el.textContent).toEqual('');
-  })
+  it('should still see original title after comp.title change', () => {
+    const oldTitle = component.title;
+    component.title = 'Test Title';
+    // Displayed title is old because Angular didn't hear the change :(
+    expect(el.textContent).toContain(oldTitle);
+  });
+
+  it('should display updated title after detectChanges', () => {
+    component.title = 'Test Title';
+    fixture.detectChanges(); // detect changes explicitly
+    expect(el.textContent).toContain(component.title);
+  });
 });

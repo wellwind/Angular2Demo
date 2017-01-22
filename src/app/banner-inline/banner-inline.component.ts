@@ -14,4 +14,8 @@ export class BannerInlineComponent implements OnInit {
   ngOnInit() {
   }
 
+  changeTitle(newTitle) {
+    this.title = newTitle;
+  }
+
 }
