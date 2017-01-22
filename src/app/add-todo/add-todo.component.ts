@@ -1,3 +1,4 @@
+import { TodoService } from './../todo.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -9,16 +10,12 @@ export class AddTodoComponent implements OnInit {
   @Input()
   todoText = 'test';
 
-  @Output()
-  addTodoItem = new EventEmitter();
-
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
   }
 
   addItemClick($event: MouseEvent) {
-    console.log(this.todoText);
-    this.addTodoItem.emit(this.todoText);
+    this.todoService.addTodoItem(this.todoText);
   }
 }
