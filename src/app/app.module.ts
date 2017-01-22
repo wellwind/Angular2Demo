@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -23,6 +25,7 @@ import { BsButtonDirective } from './bs-button.directive';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     FormsModule,
     HttpModule,
     AppRoutingModule

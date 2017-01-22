@@ -18,7 +18,8 @@ import { SettingsComponent } from './settings/settings.component';
                 component: ItemDetailComponent
             }, {
                 path: '',
-                redirectTo: '/'
+                redirectTo: '/',
+                pathMatch: 'full'
             }]
         }, {
             path: 'settings',
