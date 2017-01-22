@@ -16,12 +16,13 @@ import { TodoService } from './todo.service';
 import { IndexComponent } from './index/index.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { BsButtonDirective } from './bs-button.directive';
+import { BannerInlineComponent } from './banner-inline/banner-inline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTodoComponent,
-    TodoItemsComponent, IndexComponent, ItemDetailComponent, BsButtonDirective
+    TodoItemsComponent, IndexComponent, ItemDetailComponent, BsButtonDirective, BannerInlineComponent
   ],
   imports: [
     BrowserModule,
