@@ -1,3 +1,4 @@
+import { inject, TestBed } from '@angular/core/testing';
 
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed, ComponentFixtureAutoDetect } from '@angular/core/testing';
@@ -16,13 +17,12 @@ describe('AddTodoComponent', () => {
   let el: HTMLElement;
   let todoService: TodoService;
 
+  // mock todo service
+  let todoServiceMock = {
+    addTodoItem(todoText) { }
+  };
+
   beforeEach(async(() => {
-    // mock todo service
-    var todoServiceMock = {
-      addTodoItem(todoText) {
-        expect(true).toBe(true);
-      }
-    };
 
     TestBed.configureTestingModule({
       declarations: [AddTodoComponent],
@@ -49,7 +49,12 @@ describe('AddTodoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('addItemClick function should call TodoService.addTodoItem', () =>{
+  it('addItemClick function should call TodoService.addTodoItem', () => {
+    spyOn(todoService, 'addTodoItem');
+
+    component.todoText = 'test todo test...';
     component.addItemClick(null);
+
+    expect(todoService.addTodoItem).toHaveBeenCalledWith(component.todoText);
   });
 });
