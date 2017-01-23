@@ -15,7 +15,7 @@ describe('AddTodoComponent', () => {
   let fixture: ComponentFixture<AddTodoComponent>;
   let de: DebugElement;
   let el: HTMLElement;
-  let todoService: TodoService;
+  // let todoService: TodoService;
 
   // mock todo service
   let todoServiceMock = {
@@ -42,19 +42,19 @@ describe('AddTodoComponent', () => {
     component = fixture.componentInstance;
 
     // todoService from the root injector
-    todoService = TestBed.get(TodoService);
+    // todoService = TestBed.get(TodoService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('addItemClick function should call TodoService.addTodoItem', () => {
+  it('addItemClick function should call TodoService.addTodoItem', inject([TodoService], (todoService: TodoService) => {
     spyOn(todoService, 'addTodoItem');
 
     component.todoText = 'test todo test...';
     component.addItemClick(null);
 
     expect(todoService.addTodoItem).toHaveBeenCalledWith(component.todoText);
-  });
+  }));
 });
