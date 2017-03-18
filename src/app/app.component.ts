@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  login = {
+    username: 'wellwind',
+    password: '1234'
+  };
+  disabledCustomForm = false;
+
+  showLogin() {
+    console.log(this.login);
+  }
+
+  userChange($event) {
+    console.log($event);
+  }
+
 }
