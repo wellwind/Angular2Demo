@@ -1,10 +1,10 @@
-import { Angular2DemoPage } from './app.po';
+import { Ng2CliRc2TmpPage } from './app.po';
 
-describe('angular2-demo App', function() {
-  let page: Angular2DemoPage;
+describe('ng2-cli-rc2-tmp App', () => {
+  let page: Ng2CliRc2TmpPage;
 
   beforeEach(() => {
-    page = new Angular2DemoPage();
+    page = new Ng2CliRc2TmpPage();
   });
 
   it('should display message saying app works', () => {
